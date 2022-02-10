@@ -1,0 +1,112 @@
+.mynav {
+  .nav-inner-container {
+    padding-block: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .mynav-actions {
+      position: relative;
+      button {
+        padding: 0.75rem 1.25rem;
+        margin-left: 1rem;
+        border-radius: 50px;
+        outline: 0;
+        border: 0;
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-size: .9rem;
+      }
+      .login-cta {
+        background-color: transparent;
+        color: hsl(257, 7%, 63%);
+        transition: color 0.3s ease;
+        &:hover {
+          color: hsl(257, 27%, 26%);
+        }
+      }
+      .signup-cta {
+        background-color: hsl(180, 66%, 49%);
+        color: #fff;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: hsla(180, 66%, 49%, 0.651);
+        }
+      }
+    }
+
+    //mobile styles
+    .mobile-nav-btn {
+      display: none;
+      cursor: pointer;
+      .bar {
+        transition: all 0.3s ease;
+        width: 30px;
+        height: 3px;
+        background-color: hsl(257, 27%, 26%);
+        &:nth-child(2) {
+          margin-block: 0.4rem;
+        }
+      }
+    }
+    .mynav-mobile {
+      z-index: 9999;
+      transition: left 0.4s ease;
+      border-radius: 10px;
+      position: fixed;
+      top: 50%;
+      left: -1000px;
+      transform: translate(-50%, -50%);
+      background-color: hsl(257, 27%, 26%);
+      width: 200px;
+      padding: 2rem;
+      border-radius: 10px;
+      ul {
+        li {
+          margin-bottom: 1rem !important;
+          a {
+            font-size: 0.9rem;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            padding: 1rem;
+          }
+          &:nth-child(2) {
+            a {
+              background-color: hsl(180, 66%, 49%);
+              border-radius: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.change-look {
+  .bar {
+    &:nth-child(1) {
+      transform: rotate(45deg);
+      transform-origin: 0px 2px;
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+      transform-origin: 4px 4px;
+    }
+  }
+}
+.show-mobile-menu {
+  left: 50% !important;
+}
+/* media query */
+@media (max-width: 900px) {
+  .mynav-actions {
+    display: none;
+  }
+  .mobile-nav-btn {
+    display: block !important;
+  }
+}
